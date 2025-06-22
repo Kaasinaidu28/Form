@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        .explore,
+        header {
+            margin-top: 20px;
+        }
+        .food:hover,
+        .myfoot span:hover,
+        .tiks:hover {
+            text-decoration: underline;
+        }
+        body {
+            font-family: arial;
+        }
+        header {
+            display: flex;
+            margin-left: 200px;
+        }
+        .logo {
+            margin-right: 100px;
+        }
+        header div {
+            margin-left: 30px;
+        }
+        header a:hover
+        select:hover {
+            color: #adff2f;
+        }
+        a,
+        select {
+            all: unset;
+        }
+        option {
+            color: #000;
+        }
+        section {
+            margin-left: 250px;
+            margin-right: 250px;
+        }
+        .shedule span {
+            margin-bottom: 8px;
+        }
+        .colors div,
+        .explore {
+            margin-bottom: 30px;
+        }
+        .explore {
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+            padding: 30px;
+            box-shadow: 2px 2px 2px gray;
+            border-radius: 20px;
+        }
+        .explore div {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+        footer {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            color: #fff;
+        }
+        .myfoot span {
+            margin-right: 20px;
+        }
+        .myfoot span:hover {
+            color: #fff;
+        }
+        .tiks:hover {
+            color: #a2f690;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var storedPNR = localStorage.getItem("pnrNumber");
+            if (storedPNR) {
+                document.getElementById("japang").innerText = storedPNR;
+            } else {
+                document.getElementById("japang").innerText = "No PNR Found";
+            }
+        });
+    </script>
+    
+    
+</head>
+<body class="container-fluid"style="background-color: #F0F0F0;">
+    <header>
+        <div class="logo"><img src="image/pnrlogo.png" alt="" width="130px"></div>
+        <div><a href="https://www.confirmtkt.com/">IRCTC TICKETS</a></div>
+        <div><a href="https://www.confirmtkt.com/pnr-status">PNR STATUS</a></div>
+        <div><a href="https://www.confirmtkt.com/train-schedule">TRAIN SHEDULE</a></div>
+        <div><a href="https://www.confirmtkt.com/train-running-status">TRAIN RUNNING STATUS</a></div>
+        <div> <select style="border: none;" class="form-select"> 
+            <option selected><b>MORE</b></option> 
+            <option><a href="https://www.ixigo.com/flights?utm_source=confirmtkt&utm_medium=desktop">Flights</a>
+            </option> <option><a href="https://www.ixigo.com/hotels?utm_source=confirmtkt&utm_medium=desktop">Hotels</a>
+            </option> <option><a href="https://www.confirmtkt.com/train-LiveStation.php">Live Stations</a>
+            </option> <option><a href="https://www.confirmtkt.com/station">Station List</a></option>
+             <option><a href="https://www.confirmtkt.com/booktrain/print-ticket.php">Print Train Ticket</a></option>
+              <option><a href="https://www.confirmtkt.com/booktrain/cancel-ticket.php">Cancle Train Ticket</a></option>
+             </select>      
+              </div>
+    </header>
+    <section>
+        <div style="background-color: white; padding: 20px; margin-top: 50px;border-radius: 20px;">
+            <div style="font-weight: bold; font-size: 35px; display: flex;">PNR : <span id="japang"></span><span style="all: unset; color: green; background-color: white; margin-left: 200px;"><button class="btn btn-success"><a href="index.html">CHANGE</a></button></span></div>
+            <div style="display: flex;margin-top: 20px;">
+                <p><b>12727 - GODAVARI EXPRES</b></p> <span style="color: green;border-radius: 5px; background-color: #F0F0F0;padding: 3px; margin-left: 50px;"><span class="bi bi-star-fill"> 4.1</span></span>
+            </div>
+            <div>
+                <p style="font-size: 15px; color: #524e4e;">Visakhapatnam Junction - VSKP, 17:20 <span style="font-size: 25px;" class="bi bi-arrow-bar-right"></span>Secunderabad Junction - SC, 05:10</p>
+            </div>
+            <div style="font-size: 15px; color: #524e4e;">
+                <p>Tue, 4 Feb | SL | GN | Expected platform : 8</p>
+            </div>
+        </div>
+        <div style="background-color: white; padding: 20px; margin-top: 50px;border-radius: 20px;">
+            <div style="display: flex;justify-content: space-between;">
+                <h2>Passenger Status</h2> <span style="text-align: right;"><h4>Chart Prepared</h4><span>98 min ag</span><span style="margin-left: 8%;font-size: 20px; color: green;"><span class="bi bi-arrow-clockwise"></span></span>
+                </span>
+            </div>
+            <div style="display: grid; grid-template-columns: 3fr 3fr 3fr 3fr; margin-top: 20px;">
+                <div style="display: grid;" class="shedule"> <span style="color: gray;">S.NO</span> <span>1</span> <span>2</span> </div>
+                <div style="display: grid;"> <span style="color: gray;">Current Status</span> <span>RAC S4 55</span> <span>RAC S4 55</span> </div>
+                <div style="display: grid;"> <span style="color: gray;">Booking Status</span> <span>GNWL 216</span> <span>GNWL 217</span> </div>
+                <div style="display: grid;"> <span style="color: gray;">Coach Position</span> <span></span> <span></span> </div>
+            </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 6fr 6fr; margin-top: 20px;">
+            <div style="background-color: white; padding: 20px; margin-top: 50px;border-radius: 20px;margin-right: 40px;"> <span><span style="color: #000;background-color: #D3E5CF;font-size: 30px;padding: 5px;border-radius: 100%;"><span class="bi bi-train-freight-front-fill"></span></span> <span><b>Book a return ticket</b></span></span> <span style="margin-left: 80px;"><a href="https://www.confirmtkt.com/rbooking-d/?utm_medium=web-generic&utm_source=web"><button class="btn btn-success">Book</button></a></span>            </div>
+            <div style="background-color: white; padding: 20px; margin-top: 50px;border-radius: 20px;display: flex;"> <img src="image/ic-irctc-verification.png" width="40px"> <span><span style="margin-left: 20px; display: grid; font-weight: bold;"><span>For Faster Experience</span><span>Download Now</span></span>
+                </span> <span style="margin-left: 80px;"><a href="https://www.confirmtkt.com/rbooking-d/?utm_medium=web-generic&utm_source=web"><button class="btn btn-success">Download Now</button></a></span> </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 6fr 6fr; margin-top: 20px;">
+            <div style="background-color: white; padding: 20px; margin-top: 50px;border-radius: 20px;"> <img src="image/ic-food-booking-pnr@3x.png" width="40px"> <span style="margin-right: 100px; margin-left: 30px; margin-top: 10px;" class="food"><a href="https://www.ecatering.irctc.co.in/"><b>IRCTC Food Booking</b> <span style="margin-left: 70px; font-size: 30px;" class="bi bi-arrow-right"></span></a>
+                </span>
+            </div>
+            <div></div>
+        </div>
+        <div class="explore" style="background-color: white;">
+            <div class="jump">
+                <a href="https://www.confirmtkt.com/train-running-status">
+                    <div class="bi bi-train-freight-front-fill " style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;"></div>
+                    <div class="tiks mt-3" style="text-align: center;">Running<br>Status</div>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.confirmtkt.com/train-schedule">
+                    <div class="bi bi-envelope-paper-fill" style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;"></div>
+                    <div class="tiks mt-3" style="text-align: center;">Train<br>Shedule</div>
+                </a>
+            </div>
+            <div class="jump">
+                <a href="https://www.confirmtkt.com/">
+                    <div class="bi bi-train-freight-front" style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;"></div>
+                    <div class="tiks mt-3" style="text-align: center;">Coach<br>Position</div>
+                </a>
+            </div>
+            <div class="jump">
+                <a href="https://www.confirmtkt.com/seatmap.php?class=SL">
+                    <div class="bi bi-person" style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;"></div>
+                    <div class="tiks mt-3" style="text-align: center;"><span>Seat<br>Layout</span></div>
+                </a>
+            </div>
+        </div>
+        <div class="colors" style="margin-bottom: 30px; background-color: white; padding: 20px; margin-top: 50px;border-radius: 20px;">
+            <div style="height: 20px;"><span style="background-color: #5DB85B;padding: 10px; border-radius: 5px;"></span><span style="margin-left: 40px;">Very High confirmation chances(>70%).</span> </div>
+            <div><span style="background-color: #EFAD4E;padding: 10px; border-radius: 5px;"></span><span style="margin-left: 40px;">Medium confirmation chances(30-70%). </span></div>
+            <div><span style="background-color: #D8544F;padding: 10px; border-radius: 5px;"></span><span style="margin-left: 40px;">Very Low Confirmation chances(< 30%).</span></div> <span>* RAC will be considered as confirm while predicting.</span> </div>
+    </section>
+    <footer style="font-size: 15px; background-color: #333333; padding: 30px; padding: 50px 100px 50px 200px;">
+        <div>
+            <h5 style="color: white;">Follow Us on:</h5>
+            <div><span style="color: #3A519A; font-size: 50px; margin-right: 20px;"><a href="https://www.facebook.com/confirmtkt"><span class="bi bi-facebook"></span></a>
+                </span> <span style="color: #4D9FEA; font-size: 50px;"><a href="https://x.com/ConfirmTKT?mx=2"><span class="bi bi-twitter"></span></a>
+                </span>
+            </div>
+            <div style="display: flex; margin-bottom: 10px; color: gray;" class="myfoot"> <a href=""><span>ConfirmTkt Buzz</span></a> <a href="https://confirmtkt.freshdesk.com/support/home"><span>FAQ</span></a> <a href="https://www.confirmtkt.com/contact.htm"><span>Contact</span></a> <a href=""><span>Media Kit</span></a> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQvSUTyUVWunCwFpvpWRIu64BPPZSLke-GsW-SDBwNP06Y3A/viewform?ts=57d7aac1&pli=1"><span>Alliances</span></a>            </div>
+            <div style="display: flex; margin-bottom: 10px; color: gray;" class="myfoot"> <a href="https://www.confirmtkt.com/privacypolicy.htm"><span>Privacy Policy</span></a> <a href="https://www.confirmtkt.com/termscondition.html"><span>Terms And Condition</span></a> <a href="https://www.confirmtkt.com/csr-policy.html"><span>CSR</span></a>            <a href="https://investors.ixigo.com/"><span>Investor Relations</span></a> </div>
+            <div style="display: flex; margin-bottom: 10px; color: gray;" class="myfoot"> <a href="https://www.confirmtkt.com/Booking/cancellation-rules.html"><span>Terms And Cancellations</span></a> <a href="https://careers.ixigo.com/about"><span>Our Management</span></a> <a href=""><span>Careers</span></a> </div>
+            <div style="display: flex; margin-bottom: 10px; color: gray;"
+                class="myfoot"> <a href="https://www.ixigo.com/"><span>ixigo</span></a> <a href="https://www.abhibus.com/"><span>ixigo</span></a> </div>
+            <p>ConfirmTkt.com is official partner of IRCTC to book IRCTC train tickets and Railway train enquiry</p>
+            <p>© Copyright @ Le Travenues Technology Ltd. All Rights Reserved.</p>
+        </div>
+        <div> <a href="https://www.nasscom.in/about-us/what-we-do/industry-development/product-connect/emerge50.php"><img src="image/emerge-award.png" width="200px"></a> <a href=""><img src="image/pci-dss-compliant.jpg" width="200px"></a> </div>
+    </footer>
+</body>
+</html>F

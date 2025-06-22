@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNR</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        header {
+            display: flex;
+            margin-top: 20px;
+            margin-left: 200px
+        }    
+        .logo {
+            margin-right: 100px
+        }    
+        header div {
+            margin-left: 30px
+        }    
+        header a:hover,
+        select:hover {
+            color: #adff2f
+        }    
+        a,
+        select {
+            all: unset
+        }    
+        option {
+            color: #000
+        }    
+        main {
+            background-color: #d3e5cf;
+            margin-top: 10px;
+            padding: 50px;
+            margin-left: -250px;
+            margin-right: -250px
+        }    
+        .enter,
+        .explore div {
+            align-items: center;
+            justify-content: center
+        }    
+        .enter {
+            display: flexs
+        }    
+        .tabl-col,
+        .table {
+            display: grid;
+            grid-template-columns: 6fr 6fr
+        }    
+        .tabl-col {
+            grid-template-columns: 1fr 11fr;
+            margin-bottom: 30px;
+            font-size: 15px
+        }
+        .tabl-col span{
+            color: #000;
+            background-color: #D3E5CF;
+            font-size: 25px;
+            padding: 5px;
+            border-radius: 100%;
+        }
+        .table-row{
+            grid-template-columns: 1fr 11fr;
+            margin-bottom: 30px;
+            font-size: 15px;
+            display: flex;
+        }    
+        .ixigo,
+        .mobile {
+            background-color: #d3e5cf
+        }    
+        .mobile {
+            height: 250px;
+            margin-top: 100px;
+            margin-left: -250px;
+            margin-right: -250px
+        }    
+        section {
+            margin-left: 250px;
+            margin-right: 250px
+        }    
+        .anws span {
+            display: grid
+        }    
+        .ixigo {
+            border-radius: 30px;
+            margin-bottom: 50px;
+            padding: 15px
+        }    
+        .ixigo span {
+            margin-left: 30px
+        }    
+        p {
+            font-size: 15px
+        }    
+        .cft:hover {
+            text-decoration: underline
+        }    
+        .explore,
+        .routs {
+            display: grid;
+            grid-template-columns: 4fr 4fr 4fr
+        }    
+        .root span:hover {
+            color: #a2f690
+        }    
+        .explore {
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+            padding: 30px;
+            box-shadow: 2px 2px 2px gray;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            border-radius: 20px
+        }    
+        .explore div {
+            display: grid
+        }    
+        .jump {
+            border-right: 1px solid #000
+        }    
+        .footer-1 {
+            display: grid;
+            grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr
+        }    
+        .foot-info {
+            display: grid;
+            color: #5e616e;
+            font-size: 14px
+        }    
+        .info~span:hover,
+        .tiks:hover {
+            text-decoration: underline
+        }    
+        .tiks:hover {
+            color: #a2f690
+        }    
+        h6 {
+            font-weight: 700
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("submit").addEventListener("click", function (event) {
+                event.preventDefault();
+                var pnrInput = document.getElementById("pnrno").value.trim();
+                var err = document.getElementById("err");
+                if (pnrInput.length === 10 && !isNaN(pnrInput)) {
+                    localStorage.setItem("pnrNumber", pnrInput);
+                    window.location.href = "pnr.html";
+                } else {
+                    err.innerText = "Invalid PNR number";
+                }
+            });
+        });
+
+    </script>
+</head>
+<body class="container-fluid">
+    <header>
+        <div class="logo"><img src="image/pnrlogo.png" alt="" width="130px"></div>
+        <div><a href="https://www.confirmtkt.com/">IRCTC TICKETS</a></div>
+        <div><a href="https://www.confirmtkt.com/pnr-status">PNR STATUS</a></div>
+        <div><a href="https://www.confirmtkt.com/train-schedule">TRAIN SHEDULE</a></div>
+        <div><a href="https://www.confirmtkt.com/train-running-status">TRAIN RUNNING STATUS</a></div>
+        <div> <select style="border: none;" class="form-select"> <option selected><b>MORE</b></option> <option><a href="https://www.ixigo.com/flights?utm_source=confirmtkt&utm_medium=desktop">Flights</a></option> <option><a href="https://www.ixigo.com/hotels?utm_source=confirmtkt&utm_medium=desktop">Hotels</a></option> <option><a href="https://www.confirmtkt.com/train-LiveStation.php">Live Stations</a></option> <option><a href="https://www.confirmtkt.com/station">Station List</a></option> <option><a href="https://www.confirmtkt.com/booktrain/print-ticket.php">Print Train Ticket</a></option> <option><a href="https://www.confirmtkt.com/booktrain/cancel-ticket.php">Cancle Train Ticket</a></option> </select>        </div>
+    </header>
+    <section>
+        <main>
+            <h2 style="text-align: center;">PNR Status</h2>
+            <div class="enter">
+                <form class="input-group w-50 m-auto"> <input type="text" class="form-control w-50" placeholder="Enter 10 digit PNR number " id="pnrno" onblur="validatePNR()"> <button class="btn btn-success w-25" id="submit">Check PNR Status</button> </form>
+                <p id="err"></p>
+            </div>
+        </main>
+        <div class="main-tab">
+            <h3 style="text-align: center; margin: 20px; margin-top: 70px;">#1 Platform to check PNR Status & Train Ticket booking</h3>
+            <div class="table">
+                <div>
+                    <div class="tabl-col">
+                        <div><span class="bi bi-ticket-detailed-fill"></span></div>
+                        <div>
+                            <h5>PNR Status of IRCTC Train Tickets</h5>
+                            <p style="color: gray;">With our same train alternates and prediction feature, increase your chances of getting confirm IRCTC train tickets and easily check and get instant updates of your PNR Status</p>
+                        </div>
+                    </div>
+                    <div class="tabl-col">
+                        <div><span class="bi bi-shield-fill-check"></span></div>
+                        <div>
+                            <h5>Free Cancellation on IRCTC Tickets</h5>
+                            <p style="color: gray;"> Check PNR Status before cancelling your train ticket on ConfirmTkt. If you do not want to travel or if your ticket is on the waitlist, you can easily cancel your ticket and get a full refund(Free Cancellation Opted).</p>
+                        </div>
+                    </div>
+                    <div class="tabl-col">
+                        <div><span class="bi bi-currency-rupee"></span></div>
+                        <div>
+                            <h5>IRCTC Instant Refund & Cancellation</h5>
+                            <p style="color: gray;">Get an instant refund and book your next IRCTC ticket easily.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="tabl-col">
+                        <div><span class="bi bi-credit-card-2-back-fill"></span></div>
+                        <div>
+                            <h5>UPI Enabled Secured Payment</h5>
+                            <p style="color: gray;">Payment on Confirmtkt is highly secured. Easy UPI and other multiple payment modes available.</p>
+                        </div>
+                    </div>
+                    <div class="tabl-col">
+                        <div><span class="bi bi-headset"></span></div>
+                        <div>
+                            <h5>IRCTC Booking & PNR Enquiry Support</h5>
+                            <p style="color: gray;">You can easily check your PNR Status on ConfirmTkt App or website. For any further assistance, please feel free to reach out to us on our 24X7 customer support; for any IRCTC train enquiry & booking-related queries, call 08068243910.</p>
+                        </div>
+                    </div>
+                    <div class="tabl-col">
+                        <div><span class="bi bi-train-freight-front"></span></div>
+                        <div>
+                            <h5>Live Train Status Tracking</h5>
+                            <p style="color: gray;">Before boarding your train, please do not forget to check your final PNR status after the chart preparation. You are only allowed to travel with a Confirm Ticket. After you board your train, you can easily track the live status
+                                of your train using our ConfirmTkt App or Website.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile" style="display: flex; justify-content: center; align-items: center;"> <img src="../images/mobile pnr.png" width="300px"> <img src="../images/pnr logo.png" width="400px" alt=""> </div>
+        <div style="margin-top: 20px;margin-left: 550px; display: flex; "> <a href="https://play.google.com/store/apps/details?id=com.confirmtkt.lite&pcampaignid=web_share"><img src="../images/google-play-badge.png" width="150"></a> <a href="https://apps.apple.com/in/app/confirmtkt-train-booking-app/id1037974704"><img src="../images/app-ios-badge.png" alt="" width="150"></a></div>
+        <div class="anws" style="margin-top: 150px;">
+            <h3>What are the Top Features of Confirmtkt PNR Status?</h3> <span>Instant and Live update of your IRCTC train tickets</span> <span>PNR Status with seat, coach position and platform number.</span> <span>PNR Prediction of your ticket and confirmation chances.</span>        <span>PNR Status with passenger names and journey details</span> <span>PNR chart prepared information and last-moment updates directly delivered to your Mobile App(Install ConfirmTkt APP)</span> </div>
+        <hr>
+        <div>
+            <h3>Check PNR status and waitlist PNR prediction of IRCTC</h3>
+            <p>PNR Status of IRCTC Train tickets can be checked on ConfirmTkt using your PNR number. Enter your 10 digit PNR number and click Check PNR Status button. At the time of booking your ticket might be on the waiting list which means your ticket has
+                been booked but you have not been assigned any seat or berth. Waiting list tickets may get confirmed on future before the train departs, it depends on how many confirmed tickets are cancelled or additional coach has been added. You can track
+                your current status of waiting list train tickets using your 10 digit PNR number, mentioned on your ticket using Confirmtkt website.</p>
+            <p>Additionally, you can check the chances of getting your waiting list tickets getting confirmed using Confirmtkt PNR Status prediction. Confirmtkt is one of the highest rated app in India to check PNR Status (more than 1 crore downloads)</p>
+        </div>
+        <div class="ixigo"> <span class="bi bi-ticket-detailed-fill"></span> <span>Keep track of your train ticket's current PNR status with <b>ixigo.</b></span> <span style="margin-left: 200px;"><a href="https://www.ixigo.com/pnr-status-enquiry"><button class="btn btn-success">check PNR Status</button></a></span> </div>
+        <hr>
+        <div>
+            <h3>Check PNR status on festivals</h3>
+            <p>During festivals rush like Holi, Durga pooja, Diwali, Chhath, Eid, Christmas, you can explore ConfirmTkt same train alternates feature to find confirm ticket to your destination. After which you can instantly book and check the <span style="color: #a2f690;"
+                    class="cft"><a href="https://www.confirmtkt.com/pnr-status">PNR STATUS</a></span> on Confirmtkt App or Website.<br>We have upgraded our servers to handle the festival rush. So that our users can check their <b>PNR status</b> fast and seamless.</p>
+        </div>
+        <hr>
+        <div>
+            <h3>What is PNR?</h3>
+            <p>​PNR is short name for 'Passenger Name Record'. It is a record in the database of Indian Railways against which the journey details for a passenger, or a group of passengers are stored. Centre for Railway Information Systems (CRIS) also maintains
+                information like current PNR status of the passengers, availability of berths in all classes for the next 60 days and static enquiries like Train Between Important Stations, Reservations Rules, Fares, Refund, and Rules etc When a reserved
+                railway ticket is booked for a train in Indian Railways, all the details of passengers are stored in relational database of centralized reservation system. These details are associated with a unique ten digit number. This reference number
+                is called PNR. PNR number is generally printed at the top left corner of the printed tickets. In case of the E – Ticket, it is mentioned at top in separate cell. Passenger's personal information like name, age, gender etc. is saved in the
+                database against this reference number. It includes columns to store booking status and current status of the ticket. As we know every train has limited number of seats, sometime one may not get a confirmed reserved ticket. The current status
+                of such a waitlist (W/L) ticket changes when there is any availability of reserved seats due to cancellation. This new current reservation status is generally known as PNR status.</p>
+            <hr>
+            <div>
+                <h3>About Confirmtkt PNR Prediction</h3>
+                <p>Confirmtkt PNR Prediction i.e. CONFIRMTKT STATUS will help you predict the chances of getting confirmed tickets. Prediction is done computed using data analytics and machine learning techniques based on various factors like past booking and
+                    cancellation trends, station quotas, days of the week, seasonality, holidays etc. Generally waiting list PNR Status during peak seasons like Durga puja(Dussehra), Diwali, Chhath, Holi etc has very fewer chances to get confirmed. This is
+                    due to a large number of commuters travelling to their hometowns. Even during this peak months flights and bus ticket prices zoom up. Using ConfirmTkt PNR Status check your PNR current status and also know the chances of getting your PNR
+                    status confirmed. If your PNR status has confirmation chances low on ConfirmTkt status(Prediction), it is advisable to search for alternates. ConfirmTkt also has the alternate feature which helps you to find all possible optimal options
+                    to reach your destination.</p>
+                <h3>PNR Status Confirmation of different waitlist tickets</h3>
+                <ul>
+                    <li>GNWL (General Waiting List) - Highest confirmation chances</li>
+                    <li>CKWL (Tatkal Waiting List) - GNWL tickets are preferred over Tatkal tickets hence CKWL Confirmation chances are low compared to GNWL</li>
+                    <li>RLWL (Remote Location Waiting List) - Less chances of confirmation</li>
+                    <li>PQWL (Pooled Quota Waiting List) - Less chances of confirmation, quota shared between several stations</li>
+                    <li>RLGN (Remote Location General Waiting List) - Less chances of confirmation, when user books ticket under RLWL</li>
+                    <li>RQWL (Request Waiting List) - Less chances of confirmation</li>
+                    <li>RSWL (Roadside Station Waiting List) - Less chances of confirmation</li>
+                </ul>
+                <p>PNR is an abbreviation for 'Passenger Name Record'. As the term suggests, when you book a ticket, an entry is created in your name and a 10-digit unique id is allotted against your transaction. This is your ‘PNR number’. This id is the key
+                    to figure a variety of information about your train reservation. For instance, PNR status tells you if booking is confirmed or you’ll need to wait to get a seat if someone cancels their ticket. Apart from booking confirmation, you also
+                    get to know the details of the train coach and berth, the fare paid by you, and the departure and arrival date and timelines. What’s more, you can check the PNR status using your smartphone too. Below explains how you could do the same.
+                    Using PNR Number to check ticket details: It’s super easy to check your PNR Status. To check your reservation status, enter the PNR number in the search bar and the results of the search are mostly the following details:</p>
+                <h5>Passenger and Ticket Details:</h5> <span>Information about the passenger such as their Name, Age, Gender, and Berth Preference</span> <span>Information on what seating class or quota the ticket has been booked under</span> <span>Ticket status showing CNF, RAC, or WL (these terms have been explained in detail below)</span>            <span>It mentions the coach and berth number</span>
+                <h5>Payment and Train Details:</h5> <span>Reveals how much you paid for the ticket including the transaction id and the mode of payment</span> <span>It also mentions the train number and name</span> <span>The last bit of information will be about your boarding date and time and when the train is going to get you to your destination</span><br><br>
+                <h3>Modes of PNR enquiry and how does it work?</h3>
+                <p>You must be wondering what’s the mechanics behind a PNR enquiry; what are all the modes to enquire PNR and how does it work across channels. Well, here is all you need to know about it. In this era, you need not physically visit a railway
+                    station to make an enquiry to know the status of your ticket. You can very much do it using modern enquiry modes such as smartphone applications, web portals, via SMS, and final reservation charts of course. Now, the HOW part of it - when
+                    you buy a ticket using IRCTC portal or over the counter or via any third-party ticketing platform for that matter, a 10-digit number is generated. This number stores all the information about your train journey at CRIS (Centre Of Railway
+                    Information Systems), a database meant for storing passenger details. When you make an online PNR status enquiry, this number fetches the live PNR status from the database. You can reserve up to 6 seats in a single transaction and the
+                    online PNR status is going to show the reservation details of 6 of them. You may carry out another transaction to book tickets beyond six, if need be. An SMS service was launched initially by IRCTC to get live PNR status on your mobile.
+                    To avail this service all you have to do is, send a message to the service number in the following format: PNR space "Your PNR Number".</p>
+            </div>
+            <hr>
+            <div class="anws" style="font-size: 14px;">
+                <h3>Understanding IRCTC PNR Status Abbreviations</h3>
+                <p>The abbreviations found on a PNR number status page or on a ticket could read alien and you might wonder what do these terms mean? Here is help. Here’s a list of some abbreviated terms, their meaning and full forms that they stand for:</p>
+                <span>CNF – If you read this on your live PNR status, you’ve got a ‘Confirmed’ ticket</span> <span>RAC – ‘Reservation Against Cancellation’ meaning that you are likely to get reservation in case someone cancels to travel. You can board the train though</span>            <span>WL – ‘Waiting List’ meaning that you’re lined up to get a confirmed ticket only if one decides to cancel their booking. If the chart has been prepared and your IRCTC PNR status still says WL, you cannot board the train. There are other types of waiting lists as well including GNWL (General Waitlist), TQWL (Tatkal Waitlist), PQWL (Pooled Quota Waitlist), RLWL (Remote Location Waitlist), and NOSB (No Seat Berth) CAN – Ticket Cancelled</span>            </div>
+            <hr>
+            <div>
+                <h3>For Train Ticket Booking and Live PNR Status Tracking</h3>
+                <div class="cft" style="color: #a2f690;"><a href="https://www.confirmtkt.com/">Book IRCTC Ticket on ConfirmTkt</a></div>
+            </div>
+            <hr>
+            <h3>Top Train Routes</h3>
+            <div class="routs">
+                <div>
+                    <div class="table-row">
+                        <div><span style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;" class="bi bi-train-freight-front"></span></div>
+                        <div>
+                            <h6>Trains to Bengaluru</h6>
+                            <div class="root"> <span style="color: black;">via</span> <span class="root"><a href="https://www.confirmtkt.com/trains/chennai-to-bengaluru-train-tickets">Chennai, </a></span> <span><a href="https://www.confirmtkt.com/trains/mysore-to-bengaluru-train-tickets">Mysore, </a></span>                            <span><a href="https://www.confirmtkt.com/trains/hyderabad-to-bengaluru-train-tickets">Hydrabad, </a></span> <span><a href="https://www.confirmtkt.com/trains/new-delhi-to-bengaluru-train-tickets">New Delhi</a></span> </div>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div><span style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;" class="bi bi-train-freight-front"></span></div>
+                        <div>
+                            <h6>Trains to Hyderabad</h6>
+                            <div class="root"> <span style="color: black;">via</span> <span class="root"><a href="https://www.confirmtkt.com/trains/chennai-to-bengaluru-train-tickets">Chennai, </a></span> <span><a href="https://www.confirmtkt.com/trains/mysore-to-bengaluru-train-tickets">Mumbai, </a></span>                            <span><a href="https://www.confirmtkt.com/trains/hyderabad-to-bengaluru-train-tickets">Bengaluru, </a></span> <span><a href="https://www.confirmtkt.com/trains/new-delhi-to-bengaluru-train-tickets">New Delhi</a></span> </div>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div><span style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;" class="bi bi-train-freight-front"></span></div>
+                        <div>
+                            <h6>Trains to Chennai</h6>
+                            <div class="root"> <span style="color: black;">via</span> <span class="root"><a href="https://www.confirmtkt.com/trains/chennai-to-bengaluru-train-tickets">Bengaluru, </a></span> <span><a href="https://www.confirmtkt.com/trains/mysore-to-bengaluru-train-tickets">Mysore, </a></span>                            <span><a href="https://www.confirmtkt.com/trains/hyderabad-to-bengaluru-train-tickets">Hydrabad, </a></span> <span><a href="https://www.confirmtkt.com/trains/new-delhi-to-bengaluru-train-tickets">New Delhi</a></span> </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="table-row">
+                        <div><span style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;" class="bi bi-train-freight-front"></span></div>
+                        <div>
+                            <h6>Trains to New Delhi</h6>
+                            <div> <span style="color: black;">via</span> <span class="root"><a href="https://www.confirmtkt.com/trains/chennai-to-bengaluru-train-tickets">Chennai, </a></span> <span><a href="https://www.confirmtkt.com/trains/mysore-to-bengaluru-train-tickets">Mysore, </a></span>                            <span><a href="https://www.confirmtkt.com/trains/hyderabad-to-bengaluru-train-tickets">Hydrabad, </a></span> <span><a href="https://www.confirmtkt.com/trains/new-delhi-to-bengaluru-train-tickets">Bengaluru</a></span> </div>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div><span style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;" class="bi bi-train-freight-front"></span></div>
+                        <div>
+                            <h6>Trains to Mumbai</h6>
+                            <div class="root"> <span style="color: black;">via</span> <span class="root"><a href="https://www.confirmtkt.com/trains/chennai-to-bengaluru-train-tickets">Chennai, </a></span> <span><a href="https://www.confirmtkt.com/trains/mysore-to-bengaluru-train-tickets">Mysore, </a></span>                            <span><a href="https://www.confirmtkt.com/trains/hyderabad-to-bengaluru-train-tickets">Hydrabad, </a></span> <span><a href="https://www.confirmtkt.com/trains/new-delhi-to-bengaluru-train-tickets">New Delhi</a></span> </div>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div><span style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;" class="bi bi-train-freight-front"></span></div>
+                        <div>
+                            <h6>Trains to Pune</h6>
+                            <div class="root"> <span style="color: black;">via</span> <span class="root"><a href="https://www.confirmtkt.com/trains/chennai-to-bengaluru-train-tickets">Chennai, </a></span> <span><a href="https://www.confirmtkt.com/trains/mysore-to-bengaluru-train-tickets">Mysore, </a></span>                            <span><a href="https://www.confirmtkt.com/trains/hyderabad-to-bengaluru-train-tickets">Hydrabad, </a></span> <span><a href="https://www.confirmtkt.com/trains/new-delhi-to-bengaluru-train-tickets">New Delhi</a></span> </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="table-row">
+                        <div><span style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;" class="bi bi-train-freight-front"></span></div>
+                        <div>
+                            <h6>Trains to Goa</h6>
+                            <div class="root"> <span style="color: black;">via</span> <span class="root"><a href="https://www.confirmtkt.com/trains/chennai-to-bengaluru-train-tickets">Chennai, </a></span> <span><a href="https://www.confirmtkt.com/trains/mysore-to-bengaluru-train-tickets">Mysore, </a></span>                            <span><a href="https://www.confirmtkt.com/trains/hyderabad-to-bengaluru-train-tickets">Hydrabad, </a></span> <span><a href="https://www.confirmtkt.com/trains/new-delhi-to-bengaluru-train-tickets">New Delhi</a></span> </div>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div><span style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;" class="bi bi-train-freight-front"></span></div>
+                        <div>
+                            <h6>Trains to Mysore</h6>
+                            <div class="root"> <span style="color: black;">via</span> <span class="root"><a href="https://www.confirmtkt.com/trains/chennai-to-bengaluru-train-tickets">Chennai, </a></span> <span><a href="https://www.confirmtkt.com/trains/mysore-to-bengaluru-train-tickets">Mysore, </a></span>                            <span><a href="https://www.confirmtkt.com/trains/hyderabad-to-bengaluru-train-tickets">Hydrabad, </a></span> <span><a href="https://www.confirmtkt.com/trains/new-delhi-to-bengaluru-train-tickets">New Delhi</a></span> </div>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div><span style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;" class="bi bi-train-freight-front"></span></div>
+                        <div>
+                            <h6>train iconTrains to Coimbatore</h6>
+                            <div class="root"> <span style="color: black;">via</span> <span class="root"><a href="https://www.confirmtkt.com/trains/chennai-to-bengaluru-train-tickets">Chennai, </a></span> <span><a href="https://www.confirmtkt.com/trains/mysore-to-bengaluru-train-tickets">Mysore, </a></span>                            <span><a href="https://www.confirmtkt.com/trains/hyderabad-to-bengaluru-train-tickets">Hydrabad, </a></span> <span><a href="https://www.confirmtkt.com/trains/new-delhi-to-bengaluru-train-tickets">New Delhi</a></span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3><b>Explore more with ConfirmTkt</b></h3>
+            <div class="explore">
+                <div class="jump">
+                    <a href="https://www.confirmtkt.com/">
+                        <div class="bi bi-ticket-detailed-fill" style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;"></div>
+                        <div class="tiks mt-3" style="text-align: center;">IRCTC<br>Tickets</div>
+                    </a>
+                </div>
+                <div class="jump">
+                    <a href="https://www.confirmtkt.com/pnr-status">
+                        <div class="bi bi-ticket-fill" style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;"></div>
+                        <div class="tiks mt-3" style="text-align: center;"><span>PNR<br>Status</span></div>
+                    </a>
+                </div>
+                <div class="jump">
+                    <a href="https://www.confirmtkt.com/train-running-status">
+                        <div class="bi bi-train-freight-front-fill " style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;"></div>
+                        <div class="tiks mt-3" style="text-align: center;">Running<br>Status</div>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.confirmtkt.com/train-schedule">
+                        <div class="bi bi-envelope-paper-fill" style="color: #000;background-color: #D3E5CF;font-size: 25px;padding: 5px;border-radius: 100%;"></div>
+                        <div class="tiks mt-3" style="text-align: center;">Train<br>Shedule</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer style="background-color: #F0F7F0; padding: 20px 100px 20px 100px; ">
+        <div class="footer-1">
+            <div> <img src="image/pnrlogo.png" width="100px" height="25px">
+                <p style="color: #5E616E;font-size: 14px; margin-top: 10px;">Confirmtkt.com is official partner of IRCTC to book IRCTC train tickets and Railway train enquirys</p>
+            </div>
+            <div class="foot-info">
+                <h6 class="info">Book</h6> <span><a href="https://www.confirmtkt.com/rbooking-d/"><span>IRCTC Tickets</span></a>
+                </span> <span><a href="https://www.ixigo.com/flights?utm_source=confirmtkt&utm_medium=desktop"><span>Flights</span></a>
+                </span> <span><a href="https://www.ixigo.com/hotels?utm_source=confirmtkt&utm_medium=desktop"><span>Hotels</span></a>
+                </span>
+            </div>
+            <div class="foot-info">
+                <h6 class="info">Features</h6> <span><a href="https://www.confirmtkt.com/pnr-status"><span>PNR Status</span></a>
+                </span> <span><a href="https://www.confirmtkt.com/train-running-status"><span>Train Running Status</span></a>
+                </span> <span><a href="https://www.confirmtkt.com/train-schedule"><span>Train Shedule</span></a>
+                </span>
+            </div>
+            <div class="foot-info">
+                <h6 class="info">About ConfirmTkt</h6> <span><a href="https://www.confirmtkt.com/contact.htm"><span>Contact Us</span></a>
+                </span> <span><a href=""><span>Media Kit</span></a>
+                </span> <span><a href="https://docs.google.com/forms/d/e/1FAIpQLSdQvSUTyUVWunCwFpvpWRIu64BPPZSLke-GsW-SDBwNP06Y3A/viewform?ts=57d7aac1"><span>Alliances</span></a>
+                </span>
+            </div>
+            <div class="foot-info">
+                <h6 class="info">Partners</h6> <span><a href="https://www.ixigo.com/"><span>ixigo</span></a>
+                </span> <span><a href="https://www.abhibus.com/"><span>abhibus</span></a>
+                </span>
+            </div>
+            <div class="foot-info">
+                <h6 class="info">Legal</h6> <span><a href="https://www.confirmtkt.com/privacypolicy.htm"><span>Privacy Policy</span></a>
+                </span> <span><a href="https://www.confirmtkt.com/termscondition.html"><span>Terms & Conditions</span></a>
+                </span>
+            </div>
+            <div class="foot-info">
+                <h6 class="info">Apps</h6> <span><a href="https://play.google.com/store/apps/details?id=com.confirmtkt.lite&hl=en_IN"><span>Confirmtkt</span></a>
+                </span> <span><a href="https://play.google.com/store/apps/details?id=com.ixigo.train.ixitrain&hl=en_IN"><span>ixigo</span></a>
+                </span> <span><a href="https://play.google.com/store/apps/details?id=com.app.abhibus&hl=en_IN"> <span>abhibu</span></a>
+                </span>
+            </div>
+            <div>
+                <h6>Follow us</h6> <span><a href="https://www.instagram.com/confirmtkt/"><span class="bi bi-instagram"></span></a>
+                </span> <span><a href="https://www.facebook.com/confirmtkt"><span class="bi bi-facebook"></span></a>
+                </span> <span><a href="https://x.com/ConfirmTKT"><span class="bi bi-twitter-x"></span></a>
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div style="justify-content: center; align-items: center;display: flex;">
+            <p>© Copyright @ Le Travenues Technology Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

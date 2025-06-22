@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+      var categories = ["ALL", "Electronics" ,"Footwear","Fashions"];
+      function loadclick(){
+         categories.map(function(category){
+              var li = document.createElement("li");
+              li.innerHTML = category;
+              document.querySelector("ul").appendChild(li);
+              
+
+              var option = document.createElement("option");
+              option.text = category;
+              option.value = category;
+              document.querySelector("select").appendChild(option);
+
+               var li1 = document.createElement("li");
+               var input = document.createElement("input");
+               var label = document.createElement("label");
+               input.type = "checkbox";
+               label.innerHTML = category;
+               li1.appendChild(input);
+               li1.appendChild(label);
+               document.querySelector("ol").appendChild(li1);
+         })
+      }
+    
+   </script>
+</head>
+<body>
+   <button onclick="loadclick()">Load nav</button>
+   <br>
+   <ul></ul>
+   <select></select>
+   <ol></ol>
+</body>
+</html>

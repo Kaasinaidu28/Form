@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var count = 0;
+        function loading(){
+                count++;
+            document.getElementById("status").innerHTML = `${count} % Loaded..`;
+            if(count == 100){
+                document.getElementById("loadContainer").style.display = "none";
+                document.getElementById("loadImage").style.display = "block";
+            }
+        }
+        function loadTimer(){
+            setInterval(loading, 100);
+            document.getElementById("btnContainer").style.display = "none";
+            document.getElementById("loadContainer").style.display = "block";
+        }
+    </script>
+</head>
+<body class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div id="btnContainer">
+        <button class="btn btn-primary" onclick="loadTimer()">Loading Image</button>
+    </div>
+    <div id="loadContainer" style="display: none;">
+        <div class="spinner-border text-success"></div>
+        <div id="status"></div>
+    </div>
+    <div id="loadImage" style="display: none;">
+        <img src="../images/Lion.jpg">
+    </div>
+</body>
+</html>

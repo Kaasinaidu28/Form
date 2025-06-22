@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Image</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var count = 0;
+        function load(){
+                count++;
+            document.getElementById("status").innerHTML = `${count} % Loaded..`;
+            document.querySelector("progress").value = count;
+            document.querySelector("h2").innerHTML = "Loading Image".fontcolor('green');
+            if(count == 100){
+                document.getElementById("loadContainer").style.display = "none";
+                document.getElementById("loadImage").style.display = "block";
+                document.querySelector("h2").style.display ="none";
+            }
+        }
+        var timer;
+        function loadTimer(){
+            
+            document.getElementById("btnContainer").style.display = "none";
+            document.getElementById("loadContainer").style.display = "block";
+            timer = setInterval(load, 100);
+        }
+        function startClick(){
+            timer = setInterval(load, 100);
+            document.querySelector("h2").innerHTML = "Loading Image".fontcolor('green');
+        }
+        function pauseClick(){
+            clearInterval(timer);
+            document.querySelector("h2").innerHTML = "Loading Pause".fontcolor('red');
+        }
+    </script>
+    <style>
+        progress {
+            width: 250px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div>
+        <h2></h2>
+        <div id="btnContainer">
+            <button class="btn btn-primary" onclick="loadTimer()">Loading Image</button>
+        </div>
+        <div id="loadContainer" style="display: none;" class="text-center">
+            <div><progress min="1" max="100" value="1"></progress></div>
+            <div><button class="bi bi-play btn btn-success" onclick="startClick()"></button> <button class="bi bi-pause btn btn-danger" onclick="pauseClick()"></button></div>
+            <div id="status"></div>
+        </div>
+        <div id="loadImage" style="display: none;">
+            <img src="../images/Lion.jpg">
+        </div>
+    </div>
+</body>
+</html>

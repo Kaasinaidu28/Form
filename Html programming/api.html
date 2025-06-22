@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<script>
+ 
+</script>
+<body class="container-fluid">
+
+    <section>
+    <div class="accordion" id="kfc">
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="btn btn-danger w-100 mt-4" data-bs-toggle="collapse" data-bs-target="#custmer" data-bs-parent="kfc">Custmer DetailsS</button>
+            </div>
+            <div class="accordion-collapse collapse mt-2" id="custmer" data-bs-parent="#kfc">
+                <div>
+                    <dl>
+                        <dt>Custmer Name</dt>
+                        <dd><input type="text" id="txtName" class=" form-control w-100" placeholder="Enter Your Name"></dd>
+                        <dt>Mobile number</dt>
+                        <dd><input type="text" id="txtNumber" class="form-control w-100"></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="btn btn-danger w-100 mt-2" data-bs-toggle="collapse" data-bs-target="#meal" data-bs-parent="kfc" >Select Combo</button>
+            </div>
+            <div class="accordion-collapse collapse mt-2" id="meal" data-bs-parent="#kfc">
+              <div class="accordion-body">
+                <div class="row text-center">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">
+                                <div>
+                                    <img src="../images/Lion.jpg" width="150" height="200">
+                                    <h4>Match box combo</h4>
+                                </div>
+                            </div>
+                        <div class="card-body">
+                             <div>
+                                <h4> <input type="radio" name="meals" value="mls" class="form-check-input" id="meals"><label>&#8377; 189</label></h4>  
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div>
+                                        <img src="../images/Lion.jpg" width="150" height="200">
+                                        <h4>Mini Meals</h4>
+                                    </div>
+                                </div>
+                                    <div class="card-body">
+                                        <div>
+                                            <h4> <input type="radio" name="meals" value="mls" class="form-check-input" id="meals"><label>&#8377; 189</label></h4>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+    </div>
+
+    </section>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+
+   
+</body>
+</html>

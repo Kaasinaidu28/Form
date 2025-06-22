@@ -1,0 +1,32 @@
+<script>
+  
+
+
+  let personn = {
+    name: 'Naidu',
+    greet : function(){
+      console.log(`Hello My name is ${this.name}`);
+    }
+  }
+   personn.greet();
+
+
+</script>
+<script>
+  class parent{
+    getMobile(){
+      console.log("This is IPhone");
+    }
+
+  }
+  class child extends parent {
+    getMobile(){
+      console.log("This is IPhone 15 pro max")
+    }
+  
+  }
+  let obj = new child();
+  obj.getMobile();
+  
+  
+</script>

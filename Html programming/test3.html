@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon webpage</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+
+        .ddt{
+            margin-top: 10px;
+            margin-left: 80px;
+        }
+        
+        
+
+        section{
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr;
+         
+            margin-left: 10px;
+            
+        }
+        .card{
+            background-color:white;
+            height: 320px;
+            padding: 10px;
+           
+            margin-top: 10px;
+            width: 250px;
+                    
+        }
+        .row1{
+            font-size: 15px;
+            margin-bottom: 10px;
+            font-family: arial;
+            font-weight: bold;
+            padding: 5px;
+            margin-top: 15px;
+        }
+     .row2, .row3{
+     display: grid;
+    grid-template-columns: 3fr 3fr;
+     grid-gap: 5px;
+    font-size: 15px;
+      font-family: Arial;
+ }
+ .row2 img{
+    width: 100%;
+    height: 100px;
+ }
+ .row3 img{
+    width: 100%;
+    height: 100px;
+ }
+ .row4 {
+     font-size: 10px;
+    font-family: Arial;
+    margin-top: 10px;
+    color: blue;
+   
+ }
+ p {
+ display: unset;
+  line-height: 12pt;
+ }
+ .card2{
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    margin-left: 10px;
+ }
+   .card3{
+    display: grid;
+    grid-template-columns: 10fr 10fr 10fr 10fr 10fr 10fr 10fr 10fr 10fr 10fr;
+    grid-gap: 5px;
+    margin-top: 5px;
+    background-color: white;
+    overflow: auto;
+    scroll-behavior: smooth;
+    background-color: antiquewhite;
+   }
+   .card4{
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+   
+    grid-gap: 0px;
+   margin-left: 10px;
+   }
+   .row22 img  {
+    width: 200px;
+    height: 250px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    
+
+   }
+   .row44{
+    color: blue;
+    font-size: 10px;
+    font-family: arial;
+    margin-top: 5px;
+    margin-left: 25px;
+   }
+   .see{
+    font-size: 10px;
+    font-family: arial;
+    margin-left: 15px;
+    color: blue;
+    background-color: aliceblue;
+   }
+   .para{
+    font-size: 10px;
+    font-family: arial;
+    margin-top: 10px;
+    color: blue;
+    margin-left: 20px;
+   }
+   .main1{
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 3fr;
+    margin-top: 20px;
+    margin-left: 40px;
+    background-color: aliceblue;
+    background: cover;
+    padding: 70px;
+    margin-top: -30px;
+    background-color: white;
+    padding-bottom: 20px;
+  
+   }
+   
+   .imgs{
+    margin-left: 20px;
+   }
+   .pp{
+    font-size: 10px;
+    font-family: arial;
+    font-weight: bold;
+    margin-left: 20px;
+   }
+    .btn{
+        background-color: grey;
+        margin-left: 20px;
+    }
+    .chs{
+        color: red;
+    }
+     .main2{
+        font-size: 15px;
+        font-family: arial;
+        font-weight: bold;
+        margin-left: 200px;
+        margin-top: 35px;
+     }
+     .lst{
+        display:inline-block;
+        font-weight: bold;
+        font-family: arial;
+        font-size: 10px;
+        margin-left: 20px;
+     }
+     .ltt{
+        font-size: 15px;
+        font-family: arial;
+        color: red;
+     }
+     .ltt2{
+        font-size: 15px;
+     }
+     .down{
+     margin-left: 80px;
+     margin-top: 5px;
+     background-color: white;
+     padding: 35px;
+     font-family: arial;
+     margin-right: 15px;
+     border-radius: 5px;
+     border: 1px solid black;
+    
+     }
+     .down{
+        margin-left: 20px;
+     
+     }
+     .mt{
+        text-align: right;
+        line-height: 5pt;
+        margin-top: -65px;
+        margin-right: 30px;
+     }
+     .st{
+        font-size: 10px;
+        font-weight: bold;
+        color: blue;
+        font-family: arial;
+        
+     }
+     .back{
+            background-color: lightslategray;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            font-family: arial;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        footer{
+            background-color:#232f3e ;
+            color: white;
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+            padding: 20px;
+            margin-bottom: 10px;
+            
+        }
+        .footer-title{
+            font-size: 20px;
+            font-weight: bold;
+            font-family: arial;
+            margin-bottom: 10px;
+        }
+        .footer-title~span{
+            display: block;
+            font-size: 15px;
+            font-family: arial;
+            margin-bottom: 10px;
+        }
+        .dome{
+            background-color: #232f3e;
+            padding: 15px;
+            margin-top: -8px;
+
+        }
+        .amz{
+            margin-left: 100px;
+            font-weight: bold;
+            font-style: 15px;
+            color: azure;
+        }
+        .btn1{
+            margin-left: 300px;
+        }
+        .footer2{
+            background-color:#232f3e;
+            color: white;
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
+            padding: 10px; ;
+            margin-top: 1px;
+            grid-gap: 5px;
+        }
+        .footer-title2{
+            font-size: 13px;
+            font-weight: bold;
+            font-family: arial;
+            margin-left: 120px;
+        }
+
+
+        .footer-title2~span{
+            font-size: 8px;
+            font-weight: bold;
+            font-family: arial;
+            display: block;
+            margin-left: 120px;
+        }
+        .it{
+            margin-top: 40px;
+        }
+        .tt{
+            margin-bottom: 50px;
+        }
+        .foot2{
+          
+            padding: 20px;
+            width: 400px;
+            display: grid;
+            grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
+            grid-column-gap:5px;
+            grid-row-gap: px;
+        }
+        
+       
+        
+    
+
+
+   
+  
+
+       
+    </style>
+</head>
+<body background="black">
+
+  
+
+    <header>
+       
+    
+        <img src="../../images/img1.jpg" width="100%" height="300">
+        </header>
+        
+        
+    <div class="ddt">
+        <span class="tt"> You are on amazon.com. You can also shop on amazon india for millions of products with fast local delivery.</span>
+    </div>
+    </div>
+    <section>
+        <div class="card">
+            <div class="row1">
+                Gaming accessories
+             </div>
+             <div class="row2">
+                <div>
+                    <img src="../images/banner-4.jpg" class="ss">
+                    <p> Headaets</p>
+                    </div>
+                    <div>
+                        <img src="../images/banner-1.jpg">
+                        <p>Keybords </p>
+                    </div>
+                    </div>
+                    <div class="row3">
+                        <div>
+                            <img src="../images/Amazon-Emblem.jpg">
+                            <p> Computer mics</p>
+                        </div>
+                        <div> 
+                            <img src="../images/banner-4.jpg" class="gg">
+                            <p class="ch"> Chairs</p>
+                        </div>
+                        </div>
+                        <div class="row4">
+                            See more
+                        </div>
+
+            </div>
+
+            <div class="card">
+                <div class="row1">
+                    Shop for your home assentials
+                 </div>
+                 <div class="row2">
+                    <div>
+                        <img src="../../images/img6.jpg" class="ss">
+                        <p> Cleaning tools</p>
+                        </div>
+                        <div>
+                            <img src="../../images/img7.jpg">
+                            <p>Home storage</p>
+                        </div>
+                        </div>
+                        <div class="row3">
+                            <div>
+                                <img src="../../images/img8.jpg">
+                                <p> Home Decor</p>
+                            </div>
+                            <div> 
+                                <img src="../../images/img9.jpg" class="gg">
+                                <p class="ch">Bedding</p>
+                            </div>
+                            </div>
+                            <div class="row4">
+                                See more
+                            </div>
+    
+                </div>
+                <div class="card">
+                    <div class="row1">
+                        Shop deals in fashion
+                     </div>
+                     <div class="row2">
+                        <div>
+                            <img src="../../images/img10.jpg" class="ss">
+                            <p> Jeans under $50</p>
+                            </div>
+                            <div>
+                                <img src="../../images/img11.jpg">
+                                <p>Tops under $25 </p>
+                            </div>
+                            </div>
+                            <div class="row3">
+                                <div>
+                                    <img src="../../images/img12.jpg">
+                                    <p> Dresses under $30</p>
+                                </div>
+                                <div> 
+                                    <img src="../../images/img13.jpg" class="gg">
+                                    <p class="ch"> Shoes under $50</p>
+                                </div>
+                                </div>
+                                <div class="row4">
+                                    See more
+                                </div>
+        
+                    </div>
+                    
+                    
+                    </section>
+
+                    <div class="card2">
+                        <div class="card">
+                            <div class="row1">
+                                New home arrivals under $50
+                             </div>
+                             <div class="row2">
+                                <div>
+                                    <img src="../../images/img14.jpg" class="ss">
+                                    <p>Kitchen & dining</p>
+                                    </div>
+                                    <div>
+                                        <img src="../../images/img15.jpg">
+                                        <p>Home improvement</p>
+                                    </div>
+                                    </div>
+                                    <div class="row3">
+                                        <div>
+                                            <img src="../../images/img16.jpg">
+                                            <p> Decor</p>
+                                        </div>
+                                        <div> 
+                                            <img src="../../images/img17.jpg" class="gg">
+                                            <p class="ch">Bedding & bath</p>
+                                        </div>
+                                        </div>
+                                        <div class="row4">
+                                            See more
+                                        </div>
+                
+                            </div>
+                            <div class="card">
+                                <div class="row1">
+                                    Top categories in Kitchen appliances
+                                 </div>
+                                 <div class="row2">
+                                    <div>
+                                        <img src="../../images/img18.jpg" class="ss">
+                                        <p> Cooker</p>
+                                        </div>
+                                        <div>
+                                            <img src="../../images/img19.jpg">
+                                            <p>Coffee </p>
+                                        </div>
+                                        </div>
+                                        <div class="row3">
+                                            <div>
+                                                <img src="../../images/img20.jpg">
+                                                <p>Pots</p>
+                                            </div>
+                                            <div> 
+                                                <img src="../../images/img21.jpg" class="gg">
+                                                <p class="ch">Kettels</p>
+                                            </div>
+                                            </div>
+                                            <div class="row4">
+                                                See more
+                                            </div>
+                    
+                                </div>
+                                <div class="card">
+                                    <div class="row1">
+                                        Refresh your space
+                                     </div>
+                                     <div class="row2">
+                                        <div>
+                                            <img src="../../images/img22.jpg" class="ss">
+                                            <p> Dining</p>
+                                            </div>
+                                            <div>
+                                                <img src="../../images/img23.jpg">
+                                                <p>Home </p>
+                                            </div>
+                                            </div>
+                                            <div class="row3">
+                                                <div>
+                                                    <img src="../../images/img26.jpg">
+                                                    <p>Kitchen</p>
+                                                </div>
+                                                <div> 
+                                                    <img src="../../images/img25.jpg" class="gg">
+                                                    <p class="ch">Health & beauty</p>
+                                                </div>
+                                                </div>
+                                                <div class="row4">
+                                                    See more
+                                                </div>
+                        
+                                    </div>
+                                    
+                         </div>
+                           <div class="card4">
+
+                                <div class="card">
+                                    <div class="row1">
+                                        Get your game on
+                                    </div>
+                                    <div class="row22">
+                                        <div>
+                                            <img src="../../images/img31.jpg">
+                                        </div>
+                                    
+                                    </div>
+                                    <div class="row44">
+                                        shop gaming
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="row1">
+                                        Get your game on
+                                    </div>
+                                    <div class="row22">
+                                        <div>
+                                            <img src="../../images/img32.jpg">
+                                        </div>
+                                    
+                                    </div>
+                                    <div class="row44">
+                                        shop now
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="row1">
+                                        Get your game on
+                                    </div>
+                                    <div class="row22">
+                                        <div>
+                                            <img src="../../images/img33.jpg ">
+                                        </div>
+                                    
+                                    </div>
+                                    <div class="row44">
+                                        shop now
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            
+
+                                <div class="row1">
+                                    Popular items this season
+                                </div>
+                                <div class="card3">
+                                
+                               
+                                    
+                                        <img src="../../images/img35.jpg" width="100" height="100">
+                                        <img src="../../images/img36.jpg" width="100" height="100">
+                                        <img src="../../images/img37.jpg" width="100" height="100">
+                                        <img src="../../images/img38.jpg" width="100" height="100">
+                                        <img src="../../images/img39.jpg" width="100" height="100">
+                                        <img src="../../images/img40.jpg" width="100" height="100">
+                                        <img src="../../images/img41.jpg" width="100" height="100">
+                                        <img src="../../images/img42.jpg" width="100" height="100">
+                                        <img src="../../images/img43.jpg" width="100" height="100">
+                                        <img src="../../images/img44.jpg" width="100" height="100">
+                                       
+                                      
+                                        
+                                        
+                                
+                               
+                            </div>
+                            <div class="row1">
+                                best sellers i sports & outdoors
+                            </div>
+                            <div class="card3">
+                                
+                               
+                                    
+                                <img src="../../images/img46.jpg" width="100" height="100">
+                                <img src="../../images/img47.jpg" width="100" height="100">
+                                <img src="../../images/img48.jpg" width="100" height="100">
+                                <img src="../../images/img49.jpg" width="100" height="100">
+                                <img src="../../images/img50.jpg" width="100" height="100">
+                                <img src="../../images/img51.jpg" width="100" height="100">
+                                <img src="../../images/img52.jpg" width="100" height="100">
+                                <img src="../../images/img53.jpg" width="100" height="100">
+                                <img src="../../images/img54.jpg" width="100" height="100">
+                                <img src="../../images/img55.jpg" width="100" height="100">
+                                
+                                
+                        
+                       
+                    </div>
+
+                    <div class="card2">
+
+                        <div class="card">
+                            <div class="row1">
+                                Wireless Tech
+                            </div>
+                            <div class="row2">
+                                <div>
+                                    <img src="../../images/imgb.jpg">
+                                    <p> Smartphones</p>
+                                </div>
+                                <div>
+                                    <img src="../../images/imgb.jpg">
+                                    <p> Watches</p>
+                                </div>
+                            </div>
+                            <div class="row3">
+                                <div>
+                                    <img src="../../images/imgc.jpg">
+                                    <p> Headphones</p>
+                                </div>
+                                <div>
+                                    <img src="../../images/imgd.jpg">
+                                    <p> Tablets</p>
+                                </div>
+                            </div>
+                            <div class="row4">
+                                Discover more
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="row1">
+                                Most-loved travel essentials
+                            </div>
+                            <div class="row2">
+                                <div>
+                                    <img src="../../images/imge.jpg">
+                                    <p>Backpacks</p>
+                                </div>
+                                <div>
+                                    <img src="../../images/imgf.jpg">
+                                    <p>Suitcases</p>
+                                </div>
+                            </div>
+                            <div class="row3">
+                                <div>
+                                    <img src="../../images/imgg.jpg">
+                                    <p>Accessories</p>
+                                </div>
+                                <div>
+                                    <img src="../../images/imgh.jpg">
+                                    <p> Handbags</p>
+                                </div>
+                            </div>
+                            <div class="row4">
+                                Discover more
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="row1">
+                              Fantastic Finds for Home
+                            </div>
+                            <div class="row2">
+                                <div>
+                                    <img src="../../images/imgi.jpg">
+                                    <p>Kitchen</p>
+                                </div>
+                                <div>
+                                    <img src="../../images/imgi.jpg">
+                                    <p> Home Decor</p> 
+                                </div>
+                            </div>
+                            <div class="row3">
+                                <div>
+                                    <img src="../../images/imgk.jpg">
+                                    <p>Dining</p>
+                                </div>
+                                <div>
+                                    <img src="../../images/imgl.jpg">
+                                    <p> Smart Home</p>
+                                </div>
+                            </div>
+                            <div class="row4">
+                             Discover more
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row1">
+                        More items to considre 
+                        <span class="see">  See more</span>
+                    </div>
+                    <div class="card3">
+                        
+                       
+                            
+                        <img src="../../images/imgm.jpg" width="100" height="100">
+                        <img src="../../images/imgn.jpg" width="100" height="100">
+                        <img src="../../images/imgo.jpg" width="100" height="100">
+                        <img src="../../images/imgp.jpg" width="100" height="100">
+                        <img src="../../images/imgq.jpg" width="100" height="100">
+                        <img src="../../images/imgr.jpg" width="100" height="100">
+                        <img src="../../images/imgs.jpg" width="100" height="100">
+                        <img src="../../images/imgt.jpg" width="100" height="100">
+                        <img src="../../images/imgu.jpg" width="100" height="100">
+                        <img src="../../images/imgv.jpg" width="100" height="100">
+                        
+                        
+                
+               
+            </div>
+            <div class="row1">
+                International top sellers for you               
+            </div>
+            <div class="card3">
+                
+               
+                    
+                <img src="../../images/img60.jpg" width="100" height="100">
+                <img src="../../images/img61.jpg" width="100" height="100">
+                <img src="../../images/img62.jpg" width="100" height="100">
+                <img src="../../images/img63.jpg" width="100" height="100">
+                <img src="../../images/img64.jpg" width="100" height="100">
+                <img src="../../images/img65.jpg" width="100" height="100">
+                <img src="../../images/img66.jpg" width="100" height="100">
+                <img src="../../images/img67.jpg" width="100" height="100">
+                <img src="../../images/img68.jpg" width="100" height="100">
+                <img src="../../images/img69.jpg" width="100" height="100">
+                
+                
+        
+       
+    </div>
+    <div class="main2">
+        Customers who viewed items in your browsing history also viewed
+    </div>
+
+    <div class="main1">
+        <div class="roow11">
+            <div>
+                <img class="imgs" src="../../images/imgu.jpg" width="100" height="100">
+                <div class="para">
+                    <p></p> Casio Men's Stainless <br>Steel Quartz sport Watch <br>With Resin Strap, Black,<br>26 (Model; MDV106B-...</p>
+                </div>
+                <div>
+                    <p class="pp"> 6K+ viewed in past month</p>
+
+                </div>
+                <div>
+                    <button class="btn"> Amazon's <p class="chs">Choice</p></button><p class="pp">in Men's
+                        
+                    
+                </div>
+                <div class="lst">
+                    <p> Wrist Watches<br></p>
+                    <p class="ltt"> -33% <p class="ltt2"> $49<br></p>
+                    <p> list : $<strike> 74.95</strike><br></p>
+                    <p> $11.22 shipping</p>
+                </div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="roow11">
+            <div>
+                <img class="imgs" src="public/images/imgt.jpg" width="100" height="100">
+                <div class="para">
+                    <p></p> Casio Men's Stainless <br>Steel Quartz sport Watch <br>With Resin Strap, Block,<br>26 (Model; MDV106B-1A3VCF</p>
+                </div>
+                <div>
+                    <p class="pp"> 2K+ viewed in past month</p>
+
+                </div>
+                <div>
+                    <button class="btn"> Amazon's <p class="chs">Choice</p></button><p class="pp">in Men's
+                        
+                    
+                </div>
+                <div class="lst">
+                    <p> Wrist Watches<br></p>
+                    <p class="ltt"> -31% <p class="ltt2"> $55<br></p>
+                    <p> list : $<strike> 79.15</strike><br></p>
+                    <p> $11.22 shipping</p>
+                </div>
+
+
+                
+            </div>
+        </div>
+        <div class="roow11">
+            <div>
+                <img class="imgs" src="../../images/imgt.jpg" width="100" height="100">
+                <div class="para">
+                    <p></p> Casio Men's Stainless <br>Steel Quartz sport Watch <br>With Resin Strap, Block,<br>26 (Model; MDV106DD-1A2VCF-...</p>
+                </div>
+                <div>
+                    <p class="pp"> 2K+ viewed in past month</p>
+
+                </div>
+                <div>
+                    <button class="btn"> Amazon's <p class="chs">Choice</p></button><p class="pp">in Men's
+                        
+                    
+                </div>
+                <div class="lst">
+                    <p> Wrist Watches<br></p>
+                    <p class="ltt"> -29% <p class="ltt2"> $64<br></p>
+                    <p> list : $<strike> 89.95</strike><br></p>
+                    <p> $11.56 shipping</p>
+                </div>
+
+
+                
+            </div>
+        </div>
+        <div class="roow11">
+            <div>
+                <img class="imgs" src="../../images/imgs.jpg" width="100" height="100">
+                <div class="para">
+                    <p> Casio Classi driver  <br>stainless Steel  Watch <br>Model; MDV1-<br> 106DD-1A2VCF</p>
+                </div>
+                <div>
+                    <p class="pp"> 2K+ viewed in past month</p>
+
+                </div>
+                <div>
+                    <button class="btn"> Amazon's <p class="chs">Choice</p></button><p class="pp">in Men's
+
+                    </div>
+                    <div class="lst">
+                        <p> Wrist Watches<br></p>
+                        <p class="ltt"> -29% <p class="ltt2"> $64<br></p>
+                        <p> list : $<strike> 74.95</strike><br>
+                        <p> $11.26 shipping</p>
+                    </div>
+
+                
+            </div>
+        </div>
+    </div>
+    <div class="down">
+        <i> After viewing product detail pages, look here to find on wasy way to navigate back to pages you are interested in.</i>
+        </div>
+        <div class="mt"> 
+        <p class="st"> View or edit<br>your browsing<br>history </p>
+    </div>
+    <div class="back">
+        Back to top</div>
+        <footer>
+
+            <div>
+                <div class="footer-title"> Get to know us</div>
+                <span> About Us</span>
+                <span> Careers</span>
+                <span> Press release</span>
+                <span> Amazon science</span>
+            
+            </div>
+            <div>
+            <div class="footer-title"> Connect with us</div>
+            <span> Facebook</span>
+            <span> Twitter</span>
+            <span> Instagram</span>
+            </div>
+            <div>
+                <div class="footer-title"> Make money with us</div>
+                <span>Sell on Amazon</span>
+                <span>Sell under Amazon Accelerator</span>
+                <span>Protect and Build Your Brand</span>
+                <span>Amazon Global Selling</span>
+                <span>Supply to Amazon</span>
+                <span>Become an Affiliate</span>
+                <span>Advertise Your Products</span>
+                <span>Amazon Pay on Merchants</span>
+
+            </div>
+            <div>
+                <div class="footer-title"> Let us help</div>
+                <span>Your Account</span>
+                <span>Returns Centret</span>
+                <span>Recalls and Product Safety Alerts</span>
+                <span>100% Purchase Protection</span>
+                <span>Amazon App Download</span>
+                <span> Help </span>
+                </div>
+</footer>
+<div class="dome">
+    <span class="amz"> AMAZON</span>
+    <span class="btn1"> <button> Language</button></span>
+    <span class="btn2"> <button> Country</button></span>
+    <span> <button> United states</button></span>
+    
+
+    </div>
+    <div class="footer2">
+        <div class="foot2">
+        <div class="foot">
+    
+        <div class="footer-title2">AbeBooks</div>
+    
+            <span>Books art</span>
+            <span> & Collection</span>
+            <span class="it"> <h2> Accenture</h2></span>
+            
+            <span> L&T infotech</span>
+            <span> info technologies pvt ltd</span>
+            </div>
+            
+    
+        <div clas="foot">
+            <div class="footer-title2"> Amazon Web Services</div>
+            <span> Scalable Cloud</span>
+            <span>
+                Computing Services</span>
+                <span class="it"> <h2> Accenture</h2></span>
+            
+            <span> L&T infotech</span>
+            <span> info technologies pvt ltd</span>
+            
+        </div>
+        <div class="foot">
+            <div class="footer-title2"> Audiable</div>
+            <span> Download</span>
+            <span> Audio books</span>
+            <span class="it"> <h2> Accenture</h2></span>
+            
+            <span> L&T infotech</span>
+            <span> info technologies pvt ltd</span>
+            
+        </div>
+        <div class=" foot">
+            <div class="footer-title2"> IMDb</div>
+            <span>Movies, TV </span>
+            <span> &celebrities</span>
+            <span class="it"> <h2> Accenture</h2></span>
+            
+            <span> L&T infotech</span>
+            <span> info technologies pvt ltd</span>
+            
+        
+        </div>
+        <div class="foot">
+        <div class="footer-title2"> IMDb</div>
+        <span>Movies, TV </span>
+        <span> &celebrities</span>
+        <span class="it"> <h2> Accenture</h2></span>
+        
+        <span> L&T infotech</span>
+        <span> info technologies pvt ltd</span>
+        
+
+      </div>
+      <div  class="foot">
+      <div class="footer-title2"> IMDb</div>
+      <span>Movies, TV </span>
+      <span> &celebrities</span>
+       <span class="it"> <h2> Accenture</h2></span>
+    
+      <span> L&T infotech</span>
+    <span> info technologies pvt ltd</span>
+    
+
+  </div>
+      <div class="foot">   
+   <div class="footer-title2"> IMDb</div>
+   <span>Movies, TV </span>
+  <span> &celebrities</span>
+  <span class="it"> <h2> Accenture</h2></span>
+
+   <span> L&T infotech</span>
+    <span> info technologies pvt ltd</span>
+
+
+</div>
+</div>
+
+
+
+    
+ <div>
+    <i class="fas fa-band-facebook"></i>
+  
+
+    
+</body>
+</html>
